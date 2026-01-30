@@ -13,12 +13,13 @@ providing classically impossible to break while current\nisq era quantum machine
 -> *FRACT*: [Github repo](https://github.com/morphym/) <br/>
 [Whitepaper](https://pawit.co/whitepapers/fract)
 <br> </br>
+
 you can also read comphresive information on grokipedia; including it's post-quantum security, everythin else more easily: 
 
-https://grokipedia.com/page/Fract_cryptographic_hash_function
+[Grokipedia;](https://grokipedia.com/page/Fract_cryptographic_hash_function)
 
 
-READ WHITEPAPER bout this, unique; novel. zk-disorder: https://pawit.co/whitepapers/zk-disorder.pdf
+READ WHITEPAPER bout this, unique; novel. zk-disorder: [Whitepaper](https://pawit.co/whitepapers/zk-disorder.pdf)
 
 ---
 
