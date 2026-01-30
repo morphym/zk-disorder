@@ -18,9 +18,26 @@ you can also read comphresive information on grokipedia; including it's post-qua
 https://grokipedia.com/page/Fract_cryptographic_hash_function
 
 
+READ WHITEPAPER bout this novel zk-disorder: https://pawit.co/whitepapers/zk-disorder.pdf
+
 ---
 
 ### Metrics (machine used 4vCPU 2.25GHZ x86)
+
+### FRACT.
+<img width="2701" height="779" alt="Frame 2" src="https://github.com/user-attachments/assets/1cf5a4bf-77cd-4a09-a51c-3b1c40587bf1" />
+
+
+### ZK-Disorder difference.
+
+<img width="2854" height="1902" alt="upscalemedia-transformed (2)" src="https://github.com/user-attachments/assets/1ef87000-048a-4463-a351-0411e849b4cc" />
+
+
+### ZK-disorder solana perf.
+
+<img width="5464" height="3072" alt="image" src="https://github.com/user-attachments/assets/90b80b73-d5fa-4e80-95bd-c77f98a54efe" />
+
+
 
 
 **Encryption & Proof Gen**
