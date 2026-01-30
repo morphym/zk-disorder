@@ -25,34 +25,40 @@ https://grokipedia.com/page/Fract_cryptographic_hash_function
 
 **Encryption & Proof Gen**
 ```text
-[1] Encryption Phase
-    Time:        481.00ns
-    Throughput:  Extremely High (Linear Complexity)
+princee@princee:~/projects/codename/sylix/sylix/zk_disorder$ ./target/release/bench
+=== ZK-Disorder: Benchmark  ===
+Specs: 8-Round Hyperchaotic Sponge, Cut-and-Choose (4 Slices)
 
-[2] Proof Generation
-    Time:        32.64µs
-    Proof Size:  368 bytes
-    Status:      FITS IN SINGLE UDP PACKET (Perfect)
-```
+[1] Encryption Phase (Client Side)
+    Time:        747.00ns
+    Throughput:  Extremely High (Linear Chaos)
 
-**Solana On-Chain Verification**
-```text
-[3] Verification (BPF Simulation)
+[2] Proof Generation (Client Side)
+    Time:        47.21µs
+    Proof Size:  968 bytes (Borsh)
+    Status:      FITS IN SINGLE UDP PACKET / MTU (Perfect)
+
+[3] Verification (On-Chain Simulation)
     Result:      VALID
-    Time:        5.62µs
-    TPS:         ~617,000 Verifications/sec
+    Time:        25.16µs
 
-[4] Compute Unit (CU) Breakdown
+[4] Solana BPF Compute Budget Analysis
     ----------------------------------------
+    Operation Breakdown:
     + Challenge Gen:       500 CU
-    + Chaos Checks (x4):  1400 CU
-    + Merkle Paths (x4):  6400 CU
-    + Program Overhead:   1500 CU
+    + Chaos Checks (x4):  1400 CU  (4 * 350 CU)
+    + Merkle Paths (x4):  6400 CU  (4 * 4 * 400 CU)
+    + Program Overhead:   1000 CU
     ----------------------------------------
-    TOTAL ESTIMATE:       9800 CU
+    TOTAL ESTIMATE:       9300 CU
     ----------------------------------------
-    Solana Limit:        200,000 CU
-    Conclusion:          Can batch ~20 ZK proofs in a SINGLE transaction.
+    Standard Limit:      200,000 CU
+    Usage:               4.65%
+    Conclusion:          EXTREMELY LIGHTWEIGHT. Can batch ~20 proofs/tx.
+
+[5] Stress Test (1,000 Iterations)
+    Avg Verify Time: 11.17 µs
+    Verify TPS:      89550
 ```
 
 Test it for youself:

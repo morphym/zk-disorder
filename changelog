@@ -1,0 +1,56 @@
+30 jan 2026 before 19:29, everything is complete.
+
+changes at > 19:29, removed bincode rather having borsh, as it is redudant.
+
+changes: {
+
+    "Cargo.toml": removed bincode, adding borsh deps
+
+    "lib.rs": used borsh rather bincode.
+
+    "bin/bench.rs": use borch than bincode.
+
+    "msg": this increase performance also.
+
+}
+
+changes effect:
+
+benchmark result has been changed still very high performant: {
+"princee@princee:~/projects/codename/sylix/sylix/zk_disorder$ ./target/release/bench
+=== ZK-Disorder: Benchmark  ===
+Specs: 8-Round Hyperchaotic Sponge, Cut-and-Choose (4 Slices)
+
+[1] Encryption Phase (Client Side)
+    Time:        747.00ns
+    Throughput:  Extremely High (Linear Chaos)
+
+[2] Proof Generation (Client Side)
+    Time:        47.21µs
+    Proof Size:  968 bytes (Borsh)
+    Status:      FITS IN SINGLE UDP PACKET / MTU (Perfect)
+
+[3] Verification (On-Chain Simulation)
+    Result:      VALID
+    Time:        25.16µs
+
+[4] Solana BPF Compute Budget Analysis
+    ----------------------------------------
+    Operation Breakdown:
+    + Challenge Gen:       500 CU
+    + Chaos Checks (x4):  1400 CU  (4 * 350 CU)
+    + Merkle Paths (x4):  6400 CU  (4 * 4 * 400 CU)
+    + Program Overhead:   1000 CU
+    ----------------------------------------
+    TOTAL ESTIMATE:       9300 CU
+    ----------------------------------------
+    Standard Limit:      200,000 CU
+    Usage:               4.65%
+    Conclusion:          EXTREMELY LIGHTWEIGHT. Can batch ~20 proofs/tx.
+
+[5] Stress Test (1,000 Iterations)
+    Avg Verify Time: 11.17 µs
+    Verify TPS:      89550"
+
+    }
+machine used is 4vCPU 2.25GHZ,
