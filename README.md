@@ -169,7 +169,19 @@ cargo test --release
 ##  References
 
 *   **FRACT Library**: The underlying hyperchaotic primitive.
-*   **Whitepaper**: [FRACT: A Hyperchaotic, Quantum-Resistant Hash](https://pawit.co/whitepapers/fract)
+*   Whitepaper: [FRACT: A Hyperchaotic, Quantum-Resistant Hash](https://pawit.co/whitepapers/fract)
+*   **ZK-disorder**: [Whitepaper](https://pawit.co/whitepapers/zk-disorder.pdf)
 
 * Intensive information on *FRACT*: [Grokipedia](https://grokipedia.com/page/Fract_cryptographic_hash_function
 )
+
+## License
+
+Everything presented whose author is Pawit Sahare, also including whitepapers; code,
+
+are licensed either MIT or CC 4.0. you can use it anything personal or not but attribution or copyright notice should be present or given to
+Pawit Sahare.
+
+2025 Dec- 2026.
+
+0:21
