@@ -18,7 +18,7 @@ you can also read comphresive information on grokipedia; including it's post-qua
 https://grokipedia.com/page/Fract_cryptographic_hash_function
 
 
-READ WHITEPAPER bout this novel zk-disorder: https://pawit.co/whitepapers/zk-disorder.pdf
+READ WHITEPAPER bout this, unique; novel. zk-disorder: https://pawit.co/whitepapers/zk-disorder.pdf
 
 ---
 
