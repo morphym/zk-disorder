@@ -4,9 +4,8 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-fract = "0.1.2"
+fract = "1.2.3" # this is only stable version for zk-disorder. do not use anyhing else.
 
-rand = "0.9.2"
 
 borsh = { version = "1.0", features = ["derive"]}
 

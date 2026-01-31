@@ -87,6 +87,17 @@ Test it for youself:
 adding rust benches would limit it only to rust users, it was also redudant;
 
 
+#### Note:
+
+Use only zk-disorder branch. on both highly unique design; fract and zk-disorder.
+otherwise, first- fract, use terminal things at main.rs and optional hex create (only used for helpers).  it's literaly need no other deps.
+
+at branch zk-disorder, there is no deps contain at; fract; as it redudant for solana runtime.
+
+also at zk-disorder, "rand" was only used at benches and tests. it's removed at branch zk-disorder.
+
+
+
 ## The Core Mechanic: Chaos as a Commitment
 
 Traditional ZK proves knowledge of a path through an algebraic circuit. ZK-FRACT proves knowledge of a **trajectory through a chaotic attractor**.
