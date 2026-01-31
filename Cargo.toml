@@ -6,6 +6,11 @@ name = "zk_disorder"
 version = "0.1.1"
 edition = "2024"
 
+authors = ["@morphym"]
+description = "ZK-Disorder, A Hyperchaoic, Quantum Resistant, Fastest & Cheapest zk encryption on solana."
+license = "MIT"
+repository = "https://github.com/morphym/zk-disorder"
+
 [dependencies]
 fract = "1.2.3" # this is only stable version for zk-disorder. do not use anyhing else.
 
