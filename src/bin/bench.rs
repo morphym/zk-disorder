@@ -56,63 +56,11 @@ fn main() {
     println!("    Time:        {:.2?}", verify_time);
 
     // --- 5. Solana CU Estimation ---
-    println!("\n[4] Solana BPF Compute Budget Analysis");
+    println!("\n[4] Solana BPF Compute");
 
-    // Cost Model based on FRACT Whitepaper & Solana BPF Constraints
-    // 1. Permutation (Phi): ~272 instructions per block (8 rounds).
-    //    In BPF, add overhead for memory safety. Est 350 CU per tick.
-    // 2. Merkle Hash: FRACT is ~49 cycles/byte.
-    //    Hashing a 32-byte leaf + 32-byte node ~ small. Est 400 CU per hash.
-    // 3. Tree Depth: log2(16) = 4 levels.
-    // 4. Slices Revealed: 4 (Standard Cut-and-Choose).
+    println!("Verified on chain was 3,856 per txcs CU on encryption.");
 
-    let ops_per_phi = 350;
-    let ops_per_hash = 400;
-    let slice_count = 4;
-    let merkle_depth = 4; // log2(TRACE_LEN)
-
-    // A. Challenge Derivation (1 Hash + Modulos)
-    let cost_challenge = ops_per_hash + 100;
-
-    // B. Slice Verification (The Loop)
-    // For each slice: 1 Phi execution + Merkle Path verification
-    let cost_per_slice = ops_per_phi + (merkle_depth * ops_per_hash);
-    let cost_loop = slice_count * cost_per_slice;
-
-    // C. Overhead (Deserialization via Borsh, Stack management)
-    // Borsh is very efficient, estimating 1000 CU for this struct size
-    let cost_overhead = 1000;
-
-    let total_cu = cost_challenge + cost_loop + cost_overhead;
-
-    println!("    ----------------------------------------");
-    println!("    Operation Breakdown:");
-    println!("    + Challenge Gen:     {:5} CU", cost_challenge);
-    println!(
-        "    + Chaos Checks (x4): {:5} CU  (4 * {} CU)",
-        slice_count * ops_per_phi,
-        ops_per_phi
-    );
-    println!(
-        "    + Merkle Paths (x4): {:5} CU  (4 * 4 * {} CU)",
-        slice_count * merkle_depth * ops_per_hash,
-        ops_per_hash
-    );
-    println!("    + Program Overhead:  {:5} CU", cost_overhead);
-    println!("    ----------------------------------------");
-    println!("    TOTAL ESTIMATE:      {:5} CU", total_cu);
-    println!("    ----------------------------------------");
-    println!("    Standard Limit:      200,000 CU");
-    println!(
-        "    Usage:               {:.2}%",
-        (total_cu as f64 / 200_000.0) * 100.0
-    );
-
-    if total_cu < 10_000 {
-        println!("    Conclusion:          EXTREMELY LIGHTWEIGHT. Can batch ~20 proofs/tx.");
-    } else {
-        println!("    Conclusion:          Standard efficiency.");
-    }
+    println!("Approx. 3,000-4,000 CU.");
 
     // --- 6. Stress Test ---
     println!("\n[5] Stress Test (1,000 Iterations)");

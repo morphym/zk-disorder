@@ -4,7 +4,7 @@ use fract::Fract;
 // --- Constants ---
 pub const TRACE_LEN: usize = 16;
 pub const TOTAL_STATES: usize = TRACE_LEN + 1; // 17 states
-// We pad to next power of 2 (32) for simple Merkle math
+                                               // We pad to next power of 2 (32) for simple Merkle math
 pub const MERKLE_LEAVES: usize = 32;
 
 // --- 1. Encryption (Hyperchaotic Sponge) ---
@@ -23,14 +23,44 @@ impl FractCipher {
     }
 
     pub fn encrypt(&mut self, plaintext: [u64; 2]) -> [u64; 2] {
-        self.engine.state[0] ^= plaintext[0];
-        self.engine.state[1] ^= plaintext[1];
+        let k0 = self.engine.state[0];
+        let k1 = self.engine.state[1];
 
+        // 2. XOR to get Ciphertext
+        let c0 = plaintext[0] ^ k0;
+        let c1 = plaintext[1] ^ k1;
+
+        // 3. Absorb Ciphertext (Chaos)
+        self.engine.state[0] = c0;
+        self.engine.state[1] = c1;
+
+        // 4. Permute
         for _ in 0..8 {
             self.engine.apply_phi();
         }
 
-        [self.engine.state[0], self.engine.state[1]]
+        [c0, c1]
+    }
+
+    pub fn decrypt(&mut self, ciphertext: [u64; 2]) -> [u64; 2] {
+        // 1. Generate Keystream (Same as Encryption)
+        let k0 = self.engine.state[0];
+        let k1 = self.engine.state[1];
+
+        // 2. XOR to recover Plaintext
+        let p0 = ciphertext[0] ^ k0;
+        let p1 = ciphertext[1] ^ k1;
+
+        // 3. Absorb Ciphertext (Sync State)
+        self.engine.state[0] = ciphertext[0];
+        self.engine.state[1] = ciphertext[1];
+
+        // 4. Permute
+        for _ in 0..8 {
+            self.engine.apply_phi();
+        }
+
+        [p0, p1]
     }
 }
 
