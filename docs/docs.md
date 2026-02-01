@@ -265,4 +265,7 @@ fn batch_encrypt_and_prove(messages: Vec<[u64; 2]>, key: [u64; 2], iv: [u64; 2])
 - **ALU-Bound**: Zero memory lookups; constant-time execution resistant to cache-timing
 - 
 - **FRACT Dependency**: Requires `fract` crate for permutation Φ and hashing interface
-```
+
+### Additional docs
+
+https://github.com/morphym/disorderd/blob/main/docs/proof-doc.md
