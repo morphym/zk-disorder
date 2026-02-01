@@ -31,7 +31,7 @@ https://pawit.co/whitepapers/zk-disorder.pdf
 ### Metrics (machine used 4vCPU 2.25GHZ x86)
 
 ### FRACT.
-<img width="2701" height="779" alt="Frame 2" src="https://github.com/user-attachments/assets/1cf5a4bf-77cd-4a09-a51c-3b1c40
+<img width="2701" height="779" alt="Frame 2" src="https://github.com/user-attachments/assets/1cf5a4bf-77cd-4a09-a51c-3b1c40587bf1" />
 
 
 ### ZK-Disorder diff.
