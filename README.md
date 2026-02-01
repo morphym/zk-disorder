@@ -174,7 +174,7 @@ cargo test --release
 
 ## Docs
 
-Read docs at 
+Read [doc](https://github.com/morphym/zk-disorder/blob/main/docs/docs.md)
 
 ---
 
