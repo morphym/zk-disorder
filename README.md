@@ -31,23 +31,37 @@ https://pawit.co/whitepapers/zk-disorder.pdf
 ### Metrics (machine used 4vCPU 2.25GHZ x86)
 
 ### FRACT.
-<img width="2701" height="779" alt="Frame 2" src="https://github.com/user-attachments/assets/1cf5a4bf-77cd-4a09-a51c-3b1c40587bf1" />
+<img width="2701" height="779" alt="Frame 2" src="https://github.com/user-attachments/assets/1cf5a4bf-77cd-4a09-a51c-3b1c40
 
 
-### ZK-Disorder difference.
+### ZK-Disorder diff.
 
-<img width="2854" height="1902" alt="upscalemedia-transformed (2)" src="https://github.com/user-attachments/assets/1ef87000-048a-4463-a351-0411e849b4cc" />
+<img width="3368" height="856" alt="Frame 2 (1)" src="https://github.com/user-attachments/assets/42f613b0-a771-4a91-b016-6c326d27b7d1" />
 
-
-### ZK-disorder solana perf.
-
-<img width="5464" height="3072" alt="image" src="https://github.com/user-attachments/assets/90b80b73-d5fa-4e80-95bd-c77f98a54efe" />
+<img width="3284" height="941" alt="upscalemedia-transformed (3)" src="https://github.com/user-attachments/assets/1280b745-2851-4c46-ba36-16b99f2bd097" />
 
 
 
-Verification: This is zk-disorder encryption on the solana devnet. which proven 3,856 CU
 
-https://explorer.solana.com/tx/33DiA22gWLjrYqQZRhsRf9vTopbkBUY3qxVP6ZZC1YfokURdcD93Gk8cG4sTPCQxz6jY86DhCErgmcschAcv2b8G?cluster=devnet
+#### Verified on chain evidence
+
+on solana devnet
+
+
+Encryption Operation: 3,316 CU consumed (Slot 439,029,170)
+[https://explorer.solana.com/tx/2mmQsU9JtY4UV95sj8JFmtauWqNfEd43L21CqLoazgXXcxmQGmsqqFNn
+...](https://explorer.solana.com/tx/2mmQsU9JtY4UV95sj8JFmtauWqNfEd43L21CqLoazgXXcxmQGmsqqFNn9tCWnv8mbLbnDd5mVys8VGLBRJKR4frP?cluster=devnet#ix-1)
+
+Proof Verification: 239,234 CU consumed (Slot 439,029,174)
+[https://explorer.solana.com/tx/4cAFKBLee4MxMUGLCzp4w2sSXse5x2foQy98Rb87u6LiZt9fwG1A1fhK
+...](https://explorer.solana.com/tx/4cAFKBLee4MxMUGLCzp4w2sSXse5x2foQy98Rb87u6LiZt9fwG1A1fhKsgZy145UZxNefHguQUN2w7LrZVmXZ5AC?cluster=devnet#ix-2)
+
+
+
+
+
+
+
 
 
 **Encryption & Proof Gen**
@@ -69,21 +83,8 @@ Specs: 8-Round Hyperchaotic Sponge, Cut-and-Choose (4 Slices)
     Result:      VALID
     Time:        25.16µs
 
-[4] Solana BPF Compute Budget Analysis
-    ----------------------------------------
-    Operation Breakdown:
-    + Challenge Gen:       500 CU
-    + Chaos Checks (x4):  1400 CU  (4 * 350 CU)
-    + Merkle Paths (x4):  6400 CU  (4 * 4 * 400 CU)
-    + Program Overhead:   1000 CU
-    ----------------------------------------
-    TOTAL ESTIMATE:       9300 CU
-    ----------------------------------------
-    Standard Limit:      200,000 CU
-    Usage:               4.65%
-    Conclusion:          EXTREMELY LIGHTWEIGHT. Can batch ~20 proofs/tx.
 
-[5] Stress Test (1,000 Iterations)
+[4] Stress Test (1,000 Iterations)
     Avg Verify Time: 11.17 µs
     Verify TPS:      89550
 ```
@@ -92,7 +93,6 @@ Test it for youself:
 
 ``cargo build --release && ./target/release/bench `` 
 
-adding rust benches would limit it only to rust users, it was also redudant;
 
 
 ## The Core Mechanic: Chaos as a Commitment
@@ -164,7 +164,7 @@ Add it directly (prefered):
 ```toml
 [dependencies]
 zk-disorder = "0.1.1" # check latest version.
-fract = "0.1.2" # 1.2 version is only suited for zk-disorder  
+fract = "1.2.3" # 1.2.3 is stable version for zk-disorder as it contain no deps, other version may contain deps that are for terminal or hex this is for general usecase, but, zk-disorder doesn't need such.
 ```
 
 **Run Tests:**
