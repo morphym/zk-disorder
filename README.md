@@ -14,13 +14,17 @@ providing classically impossible to break while current\nisq era quantum machine
 [Whitepaper](https://pawit.co/whitepapers/fract)
 <br> </br>
 
+
 you can also read comphresive information on grokipedia; including it's post-quantum security, everythin else more easily: 
 
 [Grokipedia;](https://grokipedia.com/page/Fract_cryptographic_hash_function)
 
 
-READ WHITEPAPER bout this, unique; novel. zk-disorder: <br/>
+READ **WHITEPAPER** bout this, unique; novel. zk-disorder: <br/>
 https://pawit.co/whitepapers/zk-disorder.pdf
+
+
+**Anchor Program** Impl: Anchor [project](https://github.com/morphym/disorderd) impl.
 
 ---
 
@@ -40,6 +44,10 @@ https://pawit.co/whitepapers/zk-disorder.pdf
 <img width="5464" height="3072" alt="image" src="https://github.com/user-attachments/assets/90b80b73-d5fa-4e80-95bd-c77f98a54efe" />
 
 
+
+Verification: This is zk-disorder encryption on the solana devnet. which proven 3,856 CU
+
+https://explorer.solana.com/tx/33DiA22gWLjrYqQZRhsRf9vTopbkBUY3qxVP6ZZC1YfokURdcD93Gk8cG4sTPCQxz6jY86DhCErgmcschAcv2b8G?cluster=devnet
 
 
 **Encryption & Proof Gen**
@@ -164,6 +172,10 @@ fract = "0.1.2" # 1.2 version is only suited for zk-disorder
 cargo test --release
 ```
 
+## Docs
+
+Read docs at 
+
 ---
 
 ##  References
@@ -171,8 +183,9 @@ cargo test --release
 *   **FRACT Library**: The underlying hyperchaotic primitive.
 *   Whitepaper: [FRACT: A Hyperchaotic, Quantum-Resistant Hash](https://pawit.co/whitepapers/fract)
 *   **ZK-disorder**: [Whitepaper](https://pawit.co/whitepapers/zk-disorder.pdf)
+*   Anchor Program impl of, zk-disorder: [repo](https://github.com/morphym/disorderd)
 
-* Intensive information on *FRACT*: [Grokipedia](https://grokipedia.com/page/Fract_cryptographic_hash_function
+* grokipedia page on *FRACT*: [Grokipedia](https://grokipedia.com/page/Fract_cryptographic_hash_function
 )
 
 ## License

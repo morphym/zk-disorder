@@ -58,9 +58,11 @@ fn main() {
     // --- 5. Solana CU Estimation ---
     println!("\n[4] Solana BPF Compute");
 
-    println!("Verified on chain was 3,856 per txcs CU on encryption.");
+    println!("Verified on chain was 3,315 per txcs CU on encryption.");
 
-    println!("Approx. 3,000-4,000 CU.");
+    println!("this is txcs see it on explorer:
+
+        https://explorer.solana.com/tx/4NNSfYvtjvmZn4zZm3mvZnYkVYVjJiXjtw6MYL3rhQmEYu6t7zohaw34fcus9oSNQdUqVBqdfn8xoadWV9PZbG4m?cluster=devnet");
 
     // --- 6. Stress Test ---
     println!("\n[5] Stress Test (1,000 Iterations)");
