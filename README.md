@@ -5,18 +5,13 @@
 **ZK-Disorder** is a novel privacy primitive that abandons heavy arithmetic circuits (SNARKs/STARKs) in favor of **Chaotic Dynamical Systems**. 
 By utilizing the `fract` hyperchaotic hash function, it achieves encryption and zero-knowledge proofs that are **10-50x orders of magnitude faster** and lighter than elliptic-curve alternatives; 
 
-Providing security of classically impossible to break while being quantum (nisq era) conservative.
-
 > **Status**: Experimental / Research Grade.
 > **Primitive**: [FRACT-256](https://crates.io/crates/fract) (Hyperchaotic Sponge)
 
--> *FRACT*: [Github repo](https://github.com/morphym/) <br/>
-[Whitepaper](https://pawit.co/whitepapers/fract)
-<br> </br>
+-> *FRACT*: [github/morphym/fract](https://github.com/morphym/) <br/>
 
 
-
-[Grokipedia;](https://grokipedia.com/page/Fract_cryptographic_hash_function)
+[grokipedia;](https://grokipedia.com/page/Fract_cryptographic_hash_function)
 
 
 WHITEPAPER on zk-disorder: <br/>
