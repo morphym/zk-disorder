@@ -3,9 +3,9 @@
 ### Hyperchaotic Zero-Knowledge Privacy Protocol
 
 **ZK-Disorder** is a novel privacy primitive that abandons heavy arithmetic circuits (SNARKs/STARKs) in favor of **Chaotic Dynamical Systems**. 
-By utilizing the `fract` hyperchaotic hash function, it achieves encryption and zero-knowledge proofs that are **50x orders of magnitude faster** and lighter than elliptic-curve alternatives; 
+By utilizing the `fract` hyperchaotic hash function, it achieves encryption and zero-knowledge proofs that are **10-50x orders of magnitude faster** and lighter than elliptic-curve alternatives; 
 
-providing classically impossible to break while current\nisq era quantum machine are also impossible, one of reason is because of 'fract' new highly novel design that leverage hyperchaotic dynamical system, leaving no vulunerability or leverage to current quantum computers.
+Providing security of classically impossible to break while being quantum (nisq era) conservative.
 
 > **Status**: Experimental / Research Grade.
 > **Primitive**: [FRACT-256](https://crates.io/crates/fract) (Hyperchaotic Sponge)
@@ -15,12 +15,11 @@ providing classically impossible to break while current\nisq era quantum machine
 <br> </br>
 
 
-you can also read comphresive information on grokipedia; including it's post-quantum security, everythin else more easily: 
 
 [Grokipedia;](https://grokipedia.com/page/Fract_cryptographic_hash_function)
 
 
-READ **WHITEPAPER** on zk-disorder: <br/>
+WHITEPAPER on zk-disorder: <br/>
 https://pawit.co/whitepapers/zk-disorder.pdf
 
 
@@ -190,11 +189,5 @@ Read [doc](https://github.com/morphym/zk-disorder/blob/main/docs/docs.md)
 
 ## License
 
-Everything presented whose author is Pawit Sahare, also including whitepapers; code,
-
-are licensed either MIT or CC 4.0. you can use it anything personal or not but attribution or copyright notice should be present or given to
-Pawit Sahare.
-
-2025 Dec- 2026.
-
-0:21
+Eveything presented is
+Licensed either MIT or CC 4.0.
